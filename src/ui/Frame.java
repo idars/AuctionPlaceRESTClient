@@ -3,7 +3,7 @@ package ui;
 import javax.ws.rs.core.MediaType;
 import entities.Product;
 import rest.RESTController;
-import util.StringFormatter;
+import util.PrettyPrinter;
 
 /**
  *
@@ -537,7 +537,7 @@ public class Frame extends javax.swing.JFrame {
                     id = getIdField.getText();
                 }
                 String text = RESTController.get(id, mediaType);
-                text = StringFormatter.format(text, 4, mediaType);
+                text = PrettyPrinter.format(text, mediaType);
                 outputWindow.setText(text);
                 outputWindow.setCaretPosition(0);
                 break;
